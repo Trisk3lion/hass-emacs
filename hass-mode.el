@@ -11,9 +11,9 @@
 ;;; Remember to call M-x auto-complete-mode on the YAML buffer
 ;;; in order to turn auto-completion on.
 
-(use-package auto-complete)
-(use-package request)
-(use-package json)
+(require 'auto-complete)
+(require 'request)
+(require 'json)
 
 ;;; Put these in hass-mode-secrets.el
 ;;; (defvar HASS_BEARER_TOKEN "xxx")
