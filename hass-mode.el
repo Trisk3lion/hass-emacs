@@ -87,6 +87,5 @@ in order to talk to the live server."
       :timeout 8
       ))
 
-  (define-key ac-mode-map (kbd "M-'") 'auto-complete)
   (include-dots-in-symbol-syntax-table)
   )
