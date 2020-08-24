@@ -1,23 +1,34 @@
-;;; Home Assistant autocompletion of entity names for GNU Emacs
-;;; needs file ~/ha/api_states.txt to exist
-;;; or hass-mode-secrets.el 
-;;; (C) 2019 Greg J. Badros <badros@gmail.com>
+;;; hass-mode.el --- Home Assistant autocompletion of entity names for GNU Emacs
+
+;; Author: Greg J. Badros  <badros@gmail.com>
+;; Url: https://github.com/gjbadros/hass-emacs
+;; Package-Version: 0.1
+;; Version: 0.1
+;; Package-Requires: ((emacs "24.4") (json "1.5") (request "0.3.2") (auto-complete "1.5.1"))
+;; Keywords: smarthome
+
 ;;; Use at your own risk -- see LICENSE
-;;;
+
 ;;; See:
 ;;; https://www.emacswiki.org/emacs/InstallingPackages
 ;;; for details on how to get use-package to work
 ;;;
+;;; Put these in hass-mode-secrets.el
+;;; (defvar HASS_BEARER_TOKEN "xxx")
+;;; (defvar HASS_URL_PREFIX "https://....")  ;; through the hostname and port only
+;;;
 ;;; Remember to call M-x auto-complete-mode on the YAML buffer
 ;;; in order to turn auto-completion on.
+
+;;; Code:
+
+;;;; Require
 
 (require 'auto-complete)
 (require 'request)
 (require 'json)
 
-;;; Put these in hass-mode-secrets.el
-;;; (defvar HASS_BEARER_TOKEN "xxx")
-;;; (defvar HASS_URL_PREFIX "https://....")  ;; through the hostname and port only
+
 (if (file-readable-p "hass-mode-secrets.el")
     (load-file "./hass-mode-secrets.el"))
 
